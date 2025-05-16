@@ -1,0 +1,28 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "Xarajatlarni kiritish va monitoringini olib borish uchun qulay platforma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muhammad-Devel/expense-tracker.git"
+  },
+  "keywords": [
+    "expense-tracker",
+    "react",
+    "javascript",
+    "mern",
+    "node",
+    "express",
+    "tailwindcss"
+  ],
+  "author": "Muhammad J.A",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muhammad-Devel/expense-tracker/issues"
+  },
+  "homepage": "https://github.com/Muhammad-Devel/expense-tracker#readme"
+}
