@@ -26,7 +26,7 @@ const ICON_MAP = {
   "Kiyim-kechak": "👕",
   Salomatlik: "💊",
   "Ta'lim": "📚",
-  Ko'ngilochar: "🎬",
+  "Ko'ngilochar": "🎬",
   "Uy-ro'zg'or": "🏠",
   Maosh: "💼",
   Freelance: "💻",
