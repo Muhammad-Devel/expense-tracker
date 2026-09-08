@@ -1,0 +1,88 @@
+:root {
+  /* --- Ranglar (palette) --- */
+  --bg: #0F1326;
+  --bg-elevated: #171C36;
+  --surface: #1C2244;
+  --surface-soft: #232A52;
+  --border: #2C3462;
+
+  --text: #EEF0FA;
+  --text-muted: #9096B8;
+  --text-faint: #656B94;
+
+  --income: #34D7A6;
+  --income-soft: rgba(52, 215, 166, 0.14);
+  --expense: #FF7A66;
+  --expense-soft: rgba(255, 122, 102, 0.14);
+  --gold: #F2B705;
+
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+
+  --font-display: "Sora", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.app-shell {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+  padding-bottom: 96px;
+  background: var(--bg);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
