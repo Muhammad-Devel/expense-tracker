@@ -4,7 +4,7 @@ import BalanceCard from "../components/BalanceCard";
 import TransactionList from "../components/TransactionList";
 import BottomNav from "../components/BottomNav";
 import LoadingState from "../components/LoadingState";
-import { fetchSummary, fetchTransactions, deleteTransaction, withRetry } from "../api/api";
+import { withRetry, fetchSummary, fetchTransactions, deleteTransaction } from "../api/api";
 
 export default function Home() {
   const [summary, setSummary] = useState({ kirim: 0, chiqim: 0, balans: 0 });
