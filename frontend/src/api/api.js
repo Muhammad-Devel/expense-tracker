@@ -3,7 +3,7 @@ import axios from "axios";
 // Lokalda bo'sh qoldirilsa, vite.config.js dagi proxy "/api" ni backendga yo'naltiradi.
 // Productionda (Vercel) VITE_API_URL environment variable orqali Render backend manzili beriladi,
 // masalan: https://expense-tracker-backend.onrender.com/api
-const baseURL = import.meta.env.VITE_API_URL || "/api";
+const baseURL = import.meta.env.VITE_API_URL || "https://expense-tracker-cieg.onrender.com/api";
 
 const api = axios.create({
   baseURL,
