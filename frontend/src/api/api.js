@@ -7,7 +7,7 @@ const baseURL = import.meta.env.VITE_API_URL || "https://expense-tracker-cieg.on
 
 const api = axios.create({
   baseURL,
-  // timeout: 20000,
+  timeout: 20000,
 });
 
 // --- Token boshqaruvi -------------------------------------------------

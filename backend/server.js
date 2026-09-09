@@ -44,9 +44,8 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: allowedOrigins,
-  })
+  }),
 );
-
 
 app.use(express.json());
 
@@ -56,6 +55,10 @@ app.use(morgan("tiny"));
 
 app.get("/", (req, res) => {
   res.json({ message: "Expense Tracker API ishlayapti" });
+});
+
+app.get("/api/health", (req, res) => {
+  res.status(200).json({ ok: true, message: "API ishlayapti" });
 });
 
 app.use("/api/auth", authRoutes);
