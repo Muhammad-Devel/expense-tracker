@@ -12,15 +12,30 @@ connectDB();
 
 const app = express();
 
-// FRONTEND_URL: Render'da environment variable sifatida Vercel domeningizni bering,
-// masalan: https://expense-tracker.vercel.app
-// Bir nechta domen bo'lsa, vergul bilan ajrating: "https://a.vercel.app,https://b.vercel.app"
-// Agar hali sozlanmagan bo'lsa, barcha domenlarga ochiq qoladi (faqat dastlabki test uchun).
 const allowedOrigins = process.env.FRONTEND_URL
-  ? process.env.FRONTEND_URL.split(",").map((o) => o.trim())
-  : "*";
+  ? process.env.FRONTEND_URL
+      .split(",")
+      .map((origin) => origin.trim())
+      .filter(Boolean)
+  : [];
 
-app.use(cors({ origin: allowedOrigins, credentials: true }));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error(`CORS blocked: ${origin}`));
+    },
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // Yengil so'rov logi (method, url, status, javob vaqti — bir qatorda).

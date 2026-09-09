@@ -25,12 +25,15 @@ export function AuthProvider({ children }) {
 
   const login = useCallback(async (emailInput, password) => {
     const data = await loginRequest(emailInput, password);
+    console.log(data);
+    
     persist(data);
     return data;
   }, []);
 
   const register = useCallback(async (emailInput, password) => {
     const data = await registerRequest(emailInput, password);
+    console.log(data);
     persist(data);
     return data;
   }, []);
