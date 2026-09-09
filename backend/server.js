@@ -12,29 +12,41 @@ connectDB();
 
 const app = express();
 
-const allowedOrigins = process.env.FRONTEND_URL
-  ? process.env.FRONTEND_URL
-      .split(",")
-      .map((origin) => origin.trim())
-      .filter(Boolean)
-  : [];
+// const allowedOrigins = process.env.FRONTEND_URL
+//   ? process.env.FRONTEND_URL
+//       .split(",")
+//       .map((origin) => origin.trim())
+//       .filter(Boolean)
+//   : [];
+
+// app.use(
+//   cors({
+//     origin: (origin, callback) => {
+//       if (!origin) {
+//         return callback(null, true);
+//       }
+
+//       if (allowedOrigins.includes(origin)) {
+//         return callback(null, true);
+//       }
+
+//       return callback(new Error(`CORS blocked: ${origin}`));
+//     },
+//     credentials: true,
+//   })
+// );
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://expense-tracker-kfh8.vercel.app",
+];
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin) {
-        return callback(null, true);
-      }
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      return callback(new Error(`CORS blocked: ${origin}`));
-    },
-    credentials: true,
+    origin: allowedOrigins,
   })
 );
+
 
 app.use(express.json());
 
